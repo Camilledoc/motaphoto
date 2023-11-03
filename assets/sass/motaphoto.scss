@@ -1,0 +1,52 @@
+@import 'variables';
+@import 'fonts';
+@import 'header';
+@import 'footer';
+
+body {
+    color: black;
+}
+
+h1 {
+    font-family: 'Space Mono';
+    font-style: italic;
+    font-size: 96px;
+    font-weight: 700;
+        @media (max-width: $mobile-breakpoint) {
+        font-size: 28px;
+    }
+}
+
+h2 {
+    font-family: 'Space Mono';
+    font-style: italic;
+    font-size: 66px;
+    font-weight: 400;
+    @media (max-width: $mobile-breakpoint) {
+        font-size: 46px;
+    }
+}
+
+h3 {
+    font-family: 'Space Mono';
+    font-size: 18px;
+    font-weight: 400;
+    @media (max-width: $mobile-breakpoint) {
+        font-size: 18px;
+    }
+}
+
+.description_photo {
+    font-family: 'Space Mono';
+    font-size: 14px;
+    font-weight: 400;
+    color: black;
+}
+
+p {
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 300;
+    color: black;
+    line-height: 21px;
+}

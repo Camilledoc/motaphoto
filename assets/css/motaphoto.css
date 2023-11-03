@@ -1,0 +1,68 @@
+/* mes variables couleurs*/
+@font-face {
+  font-family: "Space Mono";
+  src: local("Space Mono"), local("Space_Mono"), url(assets\f ontsSpace_MonoSpaceMono-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"), local("Poppins"), url(assets\f ontsPoppinsPoppins-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  color: black;
+}
+
+h1 {
+  font-family: "Space Mono";
+  font-style: italic;
+  font-size: 96px;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+}
+
+h2 {
+  font-family: "Space Mono";
+  font-style: italic;
+  font-size: 66px;
+  font-weight: 400;
+}
+@media (max-width: 768px) {
+  h2 {
+    font-size: 46px;
+  }
+}
+
+h3 {
+  font-family: "Space Mono";
+  font-size: 18px;
+  font-weight: 400;
+}
+@media (max-width: 768px) {
+  h3 {
+    font-size: 18px;
+  }
+}
+
+.description_photo {
+  font-family: "Space Mono";
+  font-size: 14px;
+  font-weight: 400;
+  color: black;
+}
+
+p {
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 300;
+  color: black;
+  line-height: 21px;
+}
+
+/*# sourceMappingURL=motaphoto.css.map */
