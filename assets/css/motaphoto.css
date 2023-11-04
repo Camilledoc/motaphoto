@@ -1,16 +1,69 @@
-/* mes variables couleurs*/
 @font-face {
   font-family: "Space Mono";
-  src: local("Space Mono"), local("Space_Mono"), url(assets\f ontsSpace_MonoSpaceMono-Regular.ttf) format("truetype");
+  src: local("Space Mono"), local("Space_Mono"), url(../fonts/Space_Mono/SpaceMono-Regular.ttf) format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Poppins";
-  src: local("Poppins"), local("Poppins"), url(assets\f ontsPoppinsPoppins-Regular.ttf) format("truetype");
+  src: local("Poppins"), local("Poppins"), url(../fonts/Poppins/Poppins-Regular.ttf) format("truetype");
   font-weight: normal;
   font-style: normal;
 }
+.menu-motaphoto {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-motaphoto img {
+  width: 19%;
+  height: 19%;
+  margin-left: 200px;
+}
+.menu-motaphoto nav {
+  font-family: "Space Mono";
+  font-size: 14px;
+  font-weight: 400;
+  color: black;
+  text-transform: uppercase;
+  margin-right: 190px;
+}
+.menu-motaphoto nav ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+.menu-motaphoto nav ul li {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.menu-motaphoto nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+.menu-motaphoto nav ul li a:hover {
+  font-weight: 700;
+  color: black;
+}
+
+.header {
+  background-image: url("../images/nathalie-11.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 1080px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.header .header__text {
+  margin: 0 auto;
+}
+
 body {
   color: black;
 }

@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Space Mono';
     src: local('Space Mono'), local('Space_Mono'),
-    url(assets\fonts\Space_Mono\SpaceMono-Regular.ttf) format('truetype');
+    url(../fonts/Space_Mono/SpaceMono-Regular.ttf) format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -9,7 +9,7 @@
 @font-face {
     font-family: 'Poppins';
     src: local('Poppins'), local('Poppins'),
-    url(assets\fonts\Poppins\Poppins-Regular.ttf) format('truetype');
+    url(../fonts/Poppins/Poppins-Regular.ttf) format('truetype');
     font-weight: normal;
     font-style: normal;
 }

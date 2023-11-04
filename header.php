@@ -5,18 +5,25 @@
 	<meta charset="uft-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>MotaPhoto</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 	<?php wp_head(); ?>
 </head>
 
-<body>
-
+<header>
+<div class="menu-motaphoto">
+<a href="<?php echo get_home_url(); ?>">
+<img src="<?php echo get_template_directory_uri() . '\assets\images\Logo.png'; ?> " alt="logo motaphoto">
+</a>
+<nav>
 <?php /*affiche mon menu */
  wp_nav_menu([
     'theme_location' => 'main-menu',
 ]); 
 ?>
+</nav>
+</div>
+<div class="header">
+<img class="header__text" src="<?php echo get_template_directory_uri() . '\assets\images\Titre-header.png'; ?> " alt="titre photographe events">
+</div>
+</header>
 
-
+<body>
