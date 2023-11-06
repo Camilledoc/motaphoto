@@ -10,7 +10,7 @@ body {
 h1 {
     font-family: 'Space Mono';
     font-style: italic;
-    font-size: 96px;
+    font-size: 6rem;
     font-weight: 700;
     line-height: 142px;
         @media (max-width: $mobile-breakpoint) {
@@ -21,7 +21,7 @@ h1 {
 h2 {
     font-family: 'Space Mono';
     font-style: italic;
-    font-size: 66px;
+    font-size: 4.1rem;
     font-weight: 400;
     @media (max-width: $mobile-breakpoint) {
         font-size: 46px;
@@ -30,7 +30,7 @@ h2 {
 
 h3 {
     font-family: 'Space Mono';
-    font-size: 18px;
+    font-size: 1.1rem;
     font-weight: 400;
     @media (max-width: $mobile-breakpoint) {
         font-size: 18px;
@@ -39,14 +39,14 @@ h3 {
 
 .description_photo {
     font-family: 'Space Mono';
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: 400;
     color: black;
 }
 
 p {
     font-family: 'Poppins';
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: 300;
     color: black;
     line-height: 21px;
