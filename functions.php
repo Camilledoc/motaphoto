@@ -14,3 +14,8 @@ function register_my_menu() {
     register_nav_menu('footer', 'Pied de page');
 }
 add_action( 'after_setup_theme', 'register_my_menu' );
+
+/** activation fonctionnalités WP */
+add_theme_support('title-tag');
+add_theme_support('custom-logo');
+add_theme_support('post-thumbnails');
