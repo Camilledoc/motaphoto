@@ -4,18 +4,20 @@
     justify-content: center;
     align-items: center;
     border-top: 1px solid black ;
-    nav {
+    nav, p {
+        display: flex;
+        flex-direction: row;
         font-family: 'Space Mono';
         font-size: 14px;
         font-weight: 400;
         color: black;
         text-transform: uppercase;
-        margin-right: 190px;
            ul {
             display: flex; 
             flex-direction: row;
             list-style-type: none;
-            li {
+            padding: 0;
+            li, p {
                 margin-right: 10px;
                 margin-left: 10px;
                 a {

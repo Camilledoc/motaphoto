@@ -6,6 +6,7 @@
     'theme_location' => 'footer',
 ]); 
 ?>
+<p>Tous droits réservés</p>
 </nav>
 </div>
 </body>
