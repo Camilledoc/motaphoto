@@ -1,9 +1,4 @@
-header {
-    width:100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
+
 .header-motaphoto {
     display: flex;
     flex-direction: row;
@@ -42,6 +37,10 @@ header {
 }
 
 .photo-hero {
+    width:100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
     background-image: url("../images/nathalie-11.jpeg");
     background-repeat: no-repeat;
     background-position: center;
