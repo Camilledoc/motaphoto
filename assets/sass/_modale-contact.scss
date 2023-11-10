@@ -1,0 +1,71 @@
+.popup-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top:50%; 
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background-color: rgba(49, 49, 68, 0.5);
+}
+
+.popup-contact {
+    width: 30%;
+    height: 75vh;
+    background: white;
+    border: solid 5px black;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.popup-header img{
+    width: 150%;
+    position: relative;
+    top: 50%; left: 50%; /* à 50%/50% du parent référent */
+    transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+}
+
+.popup-formulaire {
+    p {
+    color: $blueNavy;
+    font-weight: 500;
+    display: flex;
+    }
+}
+
+.fenetre input {
+    border: solid 1px #B8BBC2; 
+    border-radius: 8px;
+    height: 40px;
+}
+
+.fenetre textarea {
+    border: solid 1px #B8BBC2; 
+    border-radius: 8px;
+    height: 210px;
+}
+
+.btn {
+    background-color: $grayMedium; 
+    border-radius: 2px;
+    width: 263px;
+    height: 50px;
+    padding: 8px, 15px;  
+    margin : 0 auto;   
+    border: none;
+    font-family: 'Space Mono';
+    font-size: 0.8rem;
+}
+
+.btn:hover{
+    font-weight: 700;
+    background-color: $redLight;
+}
