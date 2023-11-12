@@ -19,3 +19,22 @@ add_action( 'after_setup_theme', 'register_my_menu' );
 add_theme_support('title-tag');
 add_theme_support('custom-logo');
 add_theme_support('post-thumbnails');
+
+/**requête WP_Query pour affichage single-photo */
+function motaphoto_request_photo(){
+    $query = new WP_Query([
+        'post_type' => 'photo', 
+        'posts_per_page' => 1
+    ]);
+
+    if($query->have_posts()) {
+        wp_send_json($query);
+    } else {
+        wp_send_json(false);
+    }
+
+    wp_die();
+}
+
+/**actions requêtes */
+add_action('wp_ajax_request_photo', 'motaphoto_request_photo');

@@ -1,4 +1,5 @@
 
+<footer>
 <div class="menu-footer">
 <nav>
 <?php /*affiche mon menu footer */
@@ -11,5 +12,6 @@
 </div>
 <!-- Modale contact -->
 <?php get_template_part('template_parts/modale-contact'); ?>
+</footer>
 </body>
 </html>

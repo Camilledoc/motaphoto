@@ -20,7 +20,7 @@
 }
 .header-motaphoto img {
   width: 216px;
-  margin-left: 200px;
+  margin-left: 80%;
 }
 .header-motaphoto nav {
   font-family: "Space Mono";
@@ -28,7 +28,7 @@
   font-weight: 400;
   color: black;
   text-transform: uppercase;
-  margin-right: 190px;
+  margin-right: 9%;
 }
 .header-motaphoto nav ul {
   display: flex;
@@ -79,6 +79,7 @@
   justify-content: center;
   align-items: center;
   border-top: 1px solid black;
+  height: 60px;
 }
 .menu-footer nav, .menu-footer p {
   display: flex;
@@ -181,6 +182,33 @@
 .btn:hover {
   font-weight: 700;
   background-color: #FFD6D6;
+}
+
+.single-photo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.single-photo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-photo__info {
+  border-bottom: solid 1px black;
+}
+.single-photo__info p, .single-photo__info h2 {
+  text-transform: uppercase;
+}
+
+.single-photo__image img {
+  width: 100%;
+  height: 600px;
 }
 
 body {

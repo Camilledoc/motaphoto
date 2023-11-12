@@ -1,0 +1,28 @@
+.single-photo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    }
+
+.single-photo-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.single-photo__info {
+    border-bottom: solid 1px black ;
+    p, h2 {
+    text-transform: uppercase;
+    }
+}
+
+.single-photo__image {
+    img {
+        width: 100%;
+        height: 600px;
+    }
+}
