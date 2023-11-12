@@ -8,11 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
         PopupOverlay.style.display ='flex';
     });
 
-    document.addEventListener('click', function(event) {
-        // Vérifiez si le clic est en dehors du popup-overlay
-        if (event.target === PopupOverlay) {
-            // Masquez le popup-overlay
-            PopupOverlay.style.display = 'none';
+    window.onclick = function(event) {
+        if(event.target == PopupOverlay) {
+            PopupOverlay.style.display ='none';
         }
-    });
+    };
 });
