@@ -56,9 +56,13 @@ $type = get_post_meta($post->ID,'type', true);
         </div>
 
     <div class="single-photo-interaction">
-    <p> Cette photo vous intéresse?</p>
-    <button type="button">Contact</button>
-    </div>
+        <div class="interesse">
+        <p> Cette photo vous intéresse?</p>
+        <button id="single-contact" type="button">Contact</button>
+        </div>
+        <div class="navigation">
+        </div>
+        </div>
 </div>
 
 

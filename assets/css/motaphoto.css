@@ -211,10 +211,12 @@
 
 .single-photo__info {
   border-bottom: solid 1px black;
-  width: 50%;
+  width: 50vw;
   display: flex;
   flex-direction: column;
   justify-content: left;
+  margin-right: 1%;
+  padding-right: 21%;
 }
 .single-photo__info p, .single-photo__info h2 {
   text-transform: uppercase;
@@ -225,21 +227,32 @@
 }
 
 .single-photo__image {
-  width: 50%;
+  width: 50vw;
+  height: 80vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: end;
 }
 .single-photo__image img {
-  width: auto;
-  height: 735px;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .single-photo-interaction {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   width: 80%;
+  margin-bottom: 2%;
 }
-.single-photo-interaction button {
+.single-photo-interaction .interesse {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%;
+  margin-right: 2%;
+}
+.single-photo-interaction .interesse button {
   margin-left: 7%;
   background-color: #D8D8D8;
   border-radius: 2px;
@@ -250,9 +263,12 @@
   font-size: 0.8rem;
   box-shadow: 0px 2px 1px #B8BBC2;
 }
-.single-photo-interaction button:hover {
+.single-photo-interaction .interesse button:hover {
   font-weight: 700;
   background-color: #FFD6D6;
+}
+.single-photo-interaction .navigation {
+  width: 50%;
 }
 
 body {
