@@ -53,7 +53,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: url("../images/nathalie-11.jpeg");
+  background-image: url("../images/nathalie-11.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -116,7 +116,7 @@
   display: none;
   justify-content: center;
   align-items: center;
-  top: 50%;
+  top: 56.5%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
@@ -128,17 +128,12 @@
 }
 
 .popup-contact {
-  width: 30%;
-  height: 75vh;
+  width: 36%;
   background: white;
   border: solid 5px black;
   position: relative;
   z-index: 2;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
 }
 
 .popup-header img {
@@ -146,13 +141,22 @@
   position: relative;
   top: 50%;
   left: 50%; /* à 50%/50% du parent référent */
-  transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+  transform: translate(-50%, 3%); /* décalage de 50% de sa propre taille */
+  margin-bottom: 1.5rem;
 }
 
+.popup-formulaire form {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
 .popup-formulaire p {
   color: #313144;
   font-weight: 500;
-  display: flex;
+  margin: 1rem;
 }
 
 .fenetre input {
@@ -177,6 +181,10 @@
   border: none;
   font-family: "Space Mono";
   font-size: 0.8rem;
+  box-shadow: 0px 2px 1px #B8BBC2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .btn:hover {
@@ -195,20 +203,56 @@
 .single-photo-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
+  align-items: end;
+  width: 80%;
+  margin-bottom: 2%;
 }
 
 .single-photo__info {
   border-bottom: solid 1px black;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
 }
 .single-photo__info p, .single-photo__info h2 {
   text-transform: uppercase;
 }
+.single-photo__info a {
+  text-decoration: none;
+  color: black;
+}
 
+.single-photo__image {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
 .single-photo__image img {
-  width: 100%;
-  height: 600px;
+  width: auto;
+  height: 735px;
+}
+
+.single-photo-interaction {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+}
+.single-photo-interaction button {
+  margin-left: 7%;
+  background-color: #D8D8D8;
+  border-radius: 2px;
+  width: 263px;
+  height: 50px;
+  border: none;
+  font-family: "Space Mono";
+  font-size: 0.8rem;
+  box-shadow: 0px 2px 1px #B8BBC2;
+}
+.single-photo-interaction button:hover {
+  font-weight: 700;
+  background-color: #FFD6D6;
 }
 
 body {

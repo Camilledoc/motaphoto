@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<h1> Mon template </h1> 
-
 <?php
 if (have_posts()){
 while ( have_posts() ) :

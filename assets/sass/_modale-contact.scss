@@ -5,7 +5,7 @@
     display: none;
     justify-content: center;
     align-items: center;
-    top:50%; 
+    top:56.5%; 
     left:50%;
     transform: translate(-50%, -50%);
     z-index: 1;
@@ -16,31 +16,35 @@
     position: relative;
 }
 .popup-contact {
-    width: 30%;
-    height: 75vh;
+    width: 36%;
     background: white;
     border: solid 5px black;
     position: relative;
     z-index: 2;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
+   }
 
 .popup-header img{
     width: 150%;
     position: relative;
     top: 50%; left: 50%; /* à 50%/50% du parent référent */
-    transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+    transform: translate(-50%, 3%); /* décalage de 50% de sa propre taille */
+    margin-bottom: 1.5rem;
 }
 
 .popup-formulaire {
+    form {
+        width: 80%;
+        margin: 0 auto; 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
     p {
     color: $blueNavy;
     font-weight: 500;
-    display: flex;
+    margin: 1rem;
     }
 }
 
@@ -66,9 +70,14 @@
     border: none;
     font-family: 'Space Mono';
     font-size: 0.8rem;
+    box-shadow: 0px 2px 1px #B8BBC2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .btn:hover{
     font-weight: 700;
     background-color: $redLight;
 }
+

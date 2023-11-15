@@ -13,5 +13,6 @@
 <!-- Modale contact -->
 <?php get_template_part('template_parts/modale-contact'); ?>
 </footer>
+<?php wp_footer() ?>
 </body>
 </html>

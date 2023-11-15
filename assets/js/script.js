@@ -1,16 +1,14 @@
-//s'assure que le dom est chargé 
-document.addEventListener('DOMContentLoaded', function() {
+(function($){
 
-    let ContactBtn = document.getElementById("menu-item-26");
-    let PopupOverlay = document.querySelector(".popup-overlay");
-
-    ContactBtn.addEventListener('click', function(){
-        PopupOverlay.style.display ='flex';
+    $("#menu-item-26").on('click',function(event){
+         event.preventDefault();
+        $("#formRef").val($("#reference").text().toUpperCase());
+        $(".popup-overlay").css('display','flex');
     });
 
-    window.onclick = function(event) {
-        if(event.target == PopupOverlay) {
-            PopupOverlay.style.display ='none';
+    $(window).on('click', function(event){
+        if(event.target == $(".popup-overlay")[0]) {
+    $(".popup-overlay").css('display','none'); 
         }
-    };
-});
+    })
+})(jQuery);
