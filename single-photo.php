@@ -49,11 +49,12 @@ $type = get_post_meta($post->ID,'type', true);
             echo '<p class="description_photo"> Date : ' . $year . '</p>';
             ?>
 
-            </div>
-
-        <div class="single-photo__image"> <?php the_post_thumbnail( 'medium_large' ); ?> </div>
-        <?php endwhile; endif; ?>
         </div>
+
+        <div class="single-photo__image"> <?php the_post_thumbnail( 'medium_large' ); ?> 
+        </div>
+        <?php endwhile; endif; ?>
+    </div>
 
     <div class="single-photo-interaction">
         <div class="interesse">
@@ -61,8 +62,24 @@ $type = get_post_meta($post->ID,'type', true);
         <button id="single-contact" type="button">Contact</button>
         </div>
         <div class="navigation">
-        </div>
-        </div>
+            <div class="miniature"> 
+                <?php $prev=motaphoto_request_photoMiniature('ASC'); ?>
+                <?php if($prev){?>
+                <a href="<?php echo $prev['url']?>">
+                <img src="<?php echo $prev['img'][0]?>">
+                <i class="fa-solid fa-arrow-left-long"></i>
+                </a>
+                <?php } ?>
+                <?php $next=motaphoto_request_photoMiniature('DESC'); ?>
+                <?php if($next){?>
+                <a href="<?php echo $next['url']?>">
+                <img src="<?php echo $next['img'][0]?>">
+                <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
+                <?php } ?>
+            </div>
+                </div>
+    </div>
 </div>
 
 

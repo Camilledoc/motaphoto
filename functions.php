@@ -20,21 +20,36 @@ add_theme_support('title-tag');
 add_theme_support('custom-logo');
 add_theme_support('post-thumbnails');
 
-/**requête WP_Query pour affichage single-photo */
-function motaphoto_request_photo(){
-    $query = new WP_Query([
+/**requête WP_Query pour navigation single-photo */
+function motaphoto_request_photoMiniature($order) {
+    $sens = $order =='DESC'?'before':'after';
+    $args = array (
         'post_type' => 'photo', 
-        'posts_per_page' => 1
-    ]);
+        'posts_per_page' => 1, 
+        'orderby' => 'date', 
+        'order' => $order, 
+        'date_query' => [
+            $sens => get_the_date('Y-m-d H:i:s')
+       ],
+    ); 
+    $query = new WP_Query($args);
+    if($query->have_posts()){
+    $response = [];
 
-    if($query->have_posts()) {
-        wp_send_json($query);
+        while ($query->have_posts()){
+        $query->the_post(); 
+        $thumbnail=get_post_thumbnail_id();
+        $response['img']=wp_get_attachment_image_src($thumbnail, 'thumbnail');
+        $response['url']=get_permalink();
+        }
+       // $id = get_the_id();
     } else {
-        wp_send_json(false);
+     //   $id = false;
+        $response = false; 
     }
-
-    wp_die();
+    wp_reset_postdata();
+    return $response;
 }
 
 /**actions requêtes */
-add_action('wp_ajax_request_photo', 'motaphoto_request_photo');
+add_action('wp_ajax_request_photo', 'motaphoto_request_photoMiniature');

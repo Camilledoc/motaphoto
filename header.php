@@ -5,6 +5,7 @@
 	<meta charset="uft-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<?php wp_head(); ?>
+	<script src="https://kit.fontawesome.com/4d354bce74.js" crossorigin="anonymous"></script>
 </head>
 
 <header>
