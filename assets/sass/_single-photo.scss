@@ -37,6 +37,7 @@
     display: flex;
     flex-direction: column;
     justify-content: end;
+    align-items: end;
     img {
     max-height: 100%;
     object-fit: contain;
@@ -50,6 +51,7 @@
     align-items: center;
     width: 80%;
     height: 188px;
+
     .interesse {
     display: flex;
     flex-direction: row;
@@ -72,10 +74,28 @@
         background-color: $redLight;
     }
     }
+
     .navigation{
         width: 50%;
         display: flex;
         flex-direction: row;
         justify-content: right;
-    }
+        height: 170px;
+        align-items: end;
+        .miniature {
+            display: flex;
+            flex-direction: column;
+        }
+        .miniature-prev, .miniature-next {
+            display: none;
+        }
+        .miniature-fleche {
+            display: flex; 
+            flex-direction: row;
+            justify-content: space-between;
+            width: 150px;
+            margin-top: 3px;
+        }     
+        }        
+    
 }

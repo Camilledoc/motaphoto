@@ -281,6 +281,7 @@
   display: flex;
   flex-direction: column;
   justify-content: end;
+  align-items: end;
 }
 .single-photo__image img {
   max-height: 100%;
@@ -322,6 +323,22 @@
   display: flex;
   flex-direction: row;
   justify-content: right;
+  height: 170px;
+  align-items: end;
+}
+.single-photo-interaction .navigation .miniature {
+  display: flex;
+  flex-direction: column;
+}
+.single-photo-interaction .navigation .miniature-prev, .single-photo-interaction .navigation .miniature-next {
+  display: none;
+}
+.single-photo-interaction .navigation .miniature-fleche {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 150px;
+  margin-top: 3px;
 }
 
 body {

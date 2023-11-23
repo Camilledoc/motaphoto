@@ -23,11 +23,22 @@
     })
 
 //navigation miniature avec les flèches    
-      $(".fa-arrow-left-long").on('click', function(){
+$(".arrow-prev").hover( 
+    function() {
+        $(".miniature-prev").css('display','flex');
+        },
+        function(){
+        $(".miniature-prev").css('display','none');
+        }
+   );
 
-    })
+   $(".arrow-next").hover( 
+    function() {
+        $(".miniature-next").css('display','flex');
+        }, 
+        function(){
+        $(".miniature-next").css('display','none');
+       }
+);
 
-    $(".fa-arrow-right-long").on('click', function(){
-        
-    })
 })(jQuery);

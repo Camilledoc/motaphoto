@@ -42,9 +42,7 @@ function motaphoto_request_photoMiniature($order) {
         $response['img']=wp_get_attachment_image_src($thumbnail, 'thumbnail');
         $response['url']=get_permalink();
         }
-       // $id = get_the_id();
     } else {
-     //   $id = false;
         $response = false; 
     }
     wp_reset_postdata();
