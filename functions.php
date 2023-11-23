@@ -49,5 +49,56 @@ function motaphoto_request_photoMiniature($order) {
     return $response;
 }
 
+/**requête WP_Query pour les photos apparentées */
+function motaphoto_request_photoBlock($current_post_id) {
+    $current_post_categories = wp_get_post_terms($current_post_id, 'categorie');
+    $category_slugs = array(); // Initialise un tableau pour stocker les slugs des catégories
+    
+    // Récupère les slugs des catégories associées au post actuel
+    foreach ($current_post_categories as $category) {
+        $category_slugs[] = $category->slug;
+    }    
+    $args = array (
+        'post_type' => 'photo', 
+        'posts_per_page' => 2, 
+        'orderby' => 'rand',
+        'post__not_in' => array($current_post_id),
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'categorie',
+                'field' => 'slug',
+                'terms' => $category_slugs,
+                'operator' => 'IN',
+            ),
+        ),
+    ); 
+
+    $query = new WP_Query($args);
+    $response = array();
+
+    if($query->have_posts()){
+        while ($query->have_posts()){
+            $query->the_post(); 
+            $thumbnail = get_post_thumbnail_id();
+            $image = wp_get_attachment_image_src($thumbnail, 'large');
+            $url = get_permalink();
+            $id = get_the_id();
+
+            $item = array(
+                'img' => $image,
+                'url' => $url,
+                'id' => $id,
+            );
+            $response[] = $item;
+        }
+    } else {
+        $response = false; 
+        $id = false;
+    }
+    wp_reset_postdata();
+    return $response;
+}
+
 /**actions requêtes */
-add_action('wp_ajax_request_photo', 'motaphoto_request_photoMiniature');
+add_action('wp_ajax_request_photoMiniature', 'motaphoto_request_photoMiniature');
+add_action('wp_ajax_request_photoBlock', 'motaphoto_request_photoBlock');

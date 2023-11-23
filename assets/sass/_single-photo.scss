@@ -21,7 +21,7 @@
     flex-direction: column;
     justify-content: left;
     margin-right: 1%;
-    padding-right: 21%;
+    padding-right: 12%;
     p, h2 {
     text-transform: uppercase;
     }
@@ -51,6 +51,7 @@
     align-items: center;
     width: 80%;
     height: 188px;
+    border-bottom: solid 1px black ;
 
     .interesse {
     display: flex;
@@ -71,7 +72,7 @@
     transition: all ease-in-out 300ms;
     &:hover {
         font-weight: 700;
-        background-color: $redLight;
+        background-color: $redMedium;
         transform: scale(1.1);
     }
     }
@@ -83,7 +84,7 @@
         flex-direction: row;
         justify-content: right;
         height: 170px;
-        align-items: end;
+        align-items: end;        
         .miniature {
             display: flex;
             flex-direction: column;
@@ -115,6 +116,15 @@
                 }
         }
 
-        }        
-    
+        }      
+}
+.aussi {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 80vw;
+    h3{
+    text-align: left;
+    text-transform: uppercase;
+    }
 }

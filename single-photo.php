@@ -97,6 +97,13 @@ $type = get_post_meta($post->ID,'type', true);
             </div>
         </div>
     </div>
+
+    <div class="aussi"> 
+        <h3>Vous aimerez aussi</h3>
+            <div>
+            <?php get_template_part('template_parts/photo-block'); ?>
+            </div>
+    </div>
 </div>
 
 
