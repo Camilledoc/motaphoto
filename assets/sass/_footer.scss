@@ -13,6 +13,10 @@
         font-weight: 400;
         color: black;
         text-transform: uppercase;
+        @media (max-width: $mobile-breakpoint) {
+            font-size: 10px;
+            line-height: 0;
+        }
            ul {
             display: flex; 
             flex-direction: row;

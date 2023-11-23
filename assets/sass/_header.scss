@@ -5,9 +5,16 @@
     justify-content: space-between;
     align-items: center;
     height: 60px;
+    @media (max-width: $mobile-breakpoint) {
+        width: 100%;
+    }
     img {
         width: 216px;
         margin-left: 80%;
+        @media (max-width: $mobile-breakpoint) {
+            width: 140px;
+            margin: 10px;
+        }
     }
     nav {
     font-family: 'Space Mono';
@@ -58,6 +65,10 @@
         margin: 0 auto;
         -webkit-text-stroke: 3px white;
         filter:url(#stroke-text-svg-filter);
+        @media (max-width: $mobile-breakpoint) {
+            text-align: center;
+            -webkit-text-stroke: 1px white;
+        }
     }
    
 }
