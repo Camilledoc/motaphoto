@@ -7,6 +7,9 @@ $type = get_post_meta($post->ID,'type', true);
 ?>
 <div class="single-photo"> 
     <div class="single-photo-container"> 
+    <div class="single-photo__image-responsive"> 
+            <?php the_post_thumbnail( 'medium_large' ); ?> 
+        </div>
         <div class="single-photo__info">
             <?php if ( have_posts() ) : while( have_posts()  ) : the_post(); ?>
                 <h2><?php the_title(); ?></h2>
@@ -50,7 +53,8 @@ $type = get_post_meta($post->ID,'type', true);
 
         </div>
 
-        <div class="single-photo__image"> <?php the_post_thumbnail( 'medium_large' ); ?> 
+        <div class="single-photo__image"> 
+            <?php the_post_thumbnail( 'medium_large' ); ?> 
         </div>
 
     <?php endwhile; 

@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     width: 100vw;
-    }
+        }
 
 .single-photo-container {
     display: flex;
@@ -12,6 +12,9 @@
     justify-content: space-around;
     align-items: end;
     width: 80%;
+    @media (max-width: $mobile-breakpoint) {
+        flex-direction: column;
+    }
     }
 
 .single-photo__info {
@@ -29,6 +32,12 @@
         text-decoration: none;
         color: black;
     }
+    @media (max-width: $mobile-breakpoint) {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
 }
 
 .single-photo__image {
@@ -42,6 +51,25 @@
     max-height: 100%;
     object-fit: contain;
     }
+    @media (max-width: $mobile-breakpoint) {
+        display:none;
+    }
+}
+
+.single-photo__image-responsive {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    img {
+        width: 105%;
+        height: auto;
+        object-fit: contain;
+        }
+    @media (min-width: $mobile-breakpoint) {
+        display:none;
+        }
 }
 
 .single-photo-interaction {
@@ -52,6 +80,11 @@
     width: 80%;
     height: 188px;
     border-bottom: solid 1px black ;
+    @media (max-width: $mobile-breakpoint) {
+        width: 110%;
+        height: 150px;
+        border-top: solid 1px black ;
+    }
 
     .interesse {
     display: flex;
@@ -70,11 +103,20 @@
     font-size: 0.8rem;
     box-shadow: 0px 2px 1px #B8BBC2;
     transition: all ease-in-out 300ms;
+    @media (max-width: $mobile-breakpoint) {
+        margin-top: 2%;
+    }
     &:hover {
         font-weight: 700;
-        background-color: $redMedium;
-        transform: scale(1.1);
+        background-color: black;
+        transform: scale(0.95);
+        color: $grayMLight;
     }
+    }
+    @media (max-width: $mobile-breakpoint) {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
     }
     }
 
@@ -84,7 +126,10 @@
         flex-direction: row;
         justify-content: right;
         height: 170px;
-        align-items: end;        
+        align-items: end; 
+        @media (max-width: $mobile-breakpoint) {
+            display:none;
+        }       
         .miniature {
             display: flex;
             flex-direction: column;
@@ -126,5 +171,8 @@
     h3{
     text-align: left;
     text-transform: uppercase;
+    @media (max-width: $mobile-breakpoint) {
+        text-align: center;
+    }
     }
 }

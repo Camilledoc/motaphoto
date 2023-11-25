@@ -6,6 +6,7 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {
  wp_enqueue_style( 'theme-style', get_stylesheet_directory_uri() . '/assets/css/motaphoto.css', array(), time() );
  wp_enqueue_script( 'script-js', get_stylesheet_directory_uri() . '/assets/js/script.js', array('jquery'), time(), true );
+ wp_localize_script('script-js', 'motaphoto_js', array('ajax_url' => admin_url('admin_ajax.php')));
 }
 
 /** menu principal */
