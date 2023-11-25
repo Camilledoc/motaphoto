@@ -7,3 +7,9 @@ $grayMedium: #D8D8D8;
 $grayMLight: #E5E5E5; 
 
 $mobile-breakpoint: 768px; 
+
+:root {
+    --background-image: url("./images/nathalie-0.webp");
+}
+
+$backGroundImage : var(--background-image);

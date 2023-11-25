@@ -42,3 +42,19 @@ $(".arrow-prev").hover(
 );
 
 })(jQuery);
+
+function getRandomImage() {
+    const numberOfImages = 16;
+    const randomNumber = Math.floor(Math.random() * numberOfImages) ; 
+    const imagePath = `../../assets/images/nathalie-${randomNumber}.webp`; // Génère le chemin de l'image en utilisant le numéro aléatoire
+    return imagePath;
+}
+
+// Fonction pour changer dynamiquement l'image de fond
+function changeBackgroundImage() {
+    const randomImage = getRandomImage();
+    document.documentElement.style.setProperty('--background-image', `url('${randomImage}')`);
+}
+
+// Utilisation de la fonction pour changer l'image de fond aléatoirement
+changeBackgroundImage();

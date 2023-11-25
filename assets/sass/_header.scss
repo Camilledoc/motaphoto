@@ -48,7 +48,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background-image: url("../images/nathalie-11.webp");
+    background-image: $backGroundImage; 
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

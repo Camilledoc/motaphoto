@@ -1,4 +1,8 @@
 @charset "UTF-8";
+:root {
+  --background-image: url("./images/nathalie-0.webp");
+}
+
 @font-face {
   font-family: "Space Mono";
   src: local("Space Mono"), local("Space_Mono"), url(../fonts/Space_Mono/SpaceMono-Regular.ttf) format("truetype");
@@ -64,7 +68,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: url("../images/nathalie-11.webp");
+  background-image: var(--background-image);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
