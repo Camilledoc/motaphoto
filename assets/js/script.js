@@ -67,7 +67,7 @@ $("#charger-plus").on('click', function(event){
 
 })(jQuery);
 
-
+/**bonne idées mais le changement doit se faire dans une requête (affichage random) car cela permet que si la personne ajoute une photo, elle n'est pas à modifier le code 
 //Changement de la photo aléatoire dans le Hero 
 function getRandomImage() {
     const numberOfImages = 16;
@@ -84,3 +84,4 @@ function changeBackgroundImage() {
 
 // Utilisation de la fonction
 changeBackgroundImage();
+*/
