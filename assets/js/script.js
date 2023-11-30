@@ -41,8 +41,34 @@ $(".arrow-prev").hover(
        }
 );
 
+// bouton charger plus en AJAX 
+
+$("#charger-plus").on('click', function(event){
+    event.preventDefault();
+    $.ajax({
+        type:'POST', 
+        url: motaphoto_js.ajax_url,
+        data:{
+            action:'loadingAllPhotos', 
+        }, 
+        success:function(response){
+            console.log(response);
+            if (response.length>0){
+                response.forEach(function(photo){
+                    $(".photo-catalogue").append(photo);
+                })
+            }
+            $("#charger-plus").hide();
+        },
+
+    });
+}
+);
+
 })(jQuery);
 
+
+//Changement de la photo aléatoire dans le Hero 
 function getRandomImage() {
     const numberOfImages = 16;
     const randomNumber = Math.floor(Math.random() * numberOfImages) ; 
@@ -56,5 +82,5 @@ function changeBackgroundImage() {
     document.documentElement.style.setProperty('--background-image', `url('${randomImage}')`);
 }
 
-// Utilisation de la fonction pour changer l'image de fond aléatoirement
+// Utilisation de la fonction
 changeBackgroundImage();

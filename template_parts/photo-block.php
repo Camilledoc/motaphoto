@@ -30,9 +30,8 @@
     </div>
 
     <div class="photo-block-boutton">
-        <a href="https://www.votrelien.com">
+        <a href="<?php echo get_home_url()?>">
             <button id="plus-de-photo" type="button">Toutes les photos</button>
         </a>
     </div>
-
 </div>

@@ -43,32 +43,3 @@
 }
 }
 
-.photo-hero {
-    width:100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-image: $backGroundImage; 
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    flex-grow: 1;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-        h1 {
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        margin: 0 auto;
-        -webkit-text-stroke: 3px white;
-        filter:url(#stroke-text-svg-filter);
-        @media (max-width: $mobile-breakpoint) {
-            text-align: center;
-            -webkit-text-stroke: 1px white;
-        }
-    }
-   
-}
