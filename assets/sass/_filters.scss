@@ -1,0 +1,20 @@
+.taxonomy-categorie_item {
+    font-family: 'Poppins';
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: black;
+    line-height: 21px;
+    border-radius: 8px;
+    padding: 11px 130px 11px 11px;
+}
+
+.taxonomy-categorie_hide {
+    background-color: white; 
+    &:hover {
+        color: white;
+    }
+}
+
+.taxonomy-categorie_items:hover {
+    background-color: $red;
+}

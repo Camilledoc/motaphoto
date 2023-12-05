@@ -18,7 +18,7 @@
     }
     ?>
   </div>
-  
+
   <div class="hero__title">
     <h1> Photographe events</h1>
       <svg version="1.1" xmlns="//www.w3.org/2000/svg" xmlns:xlink="//www.w3.org/1999/xlink" style="display:none;">
@@ -32,31 +32,52 @@
   </div>
 </div>
   
+<div class="filtres">
+  <div class="filtres__categorie">
+    <form action="<?php echo esc_url(home_url('/')); ?>" method="post">
+        <?php
+        $terms = get_terms('categorie'); // Récupérer tous les termes de la taxonomie personnalisée
+
+        if ($terms && !is_wp_error($terms)) {
+            echo '<select class="taxonomy-categorie_item" name="taxonomy-categorie" id="taxonomy-categorie">';
+            echo '<option taxonomy-categorie_hide value="">CATEGORIES</option>';
+            foreach ($terms as $term) {
+                echo '<option class="taxonomy-categorie_items" value="' . esc_attr($term->slug) . '">' . esc_html($term->name) . '</option>';
+            }
+            echo '</select>';
+        }
+        ?>
+    </form>
+  </div>
+
+  <div class="filtres__format">
+    <form action="<?php echo esc_url(home_url('/')); ?>" method="post">
+        <?php
+        $terms = get_terms('format'); // Récupérer tous les termes de la taxonomie personnalisée
+
+        if ($terms && !is_wp_error($terms)) {
+            echo '<select name="taxonomy-format" id="taxonomy-format">';
+            echo '<option value="">FORMATS</option>';
+            foreach ($terms as $term) {
+                echo '<option value="' . esc_attr($term->term_id) . '">' . esc_html($term->name) . '</option>';
+            }
+            echo '</select>';
+        }
+        ?>
+    </form>
+  </div> 
+</div>
+
 
 <div class="photo-catalogue">
     <?php
-        // Appelle la fonction motaphoto_request_photoCatalogue pour obtenir les détails des photos.
+        // Appelle la fonction
+     
     $photoCatalogue = motaphoto_request_photoCatalogue();
-
-        // Vérifie si $photoCatalogue contient des données valides pour afficher les photos.
-    if ($photoCatalogue && is_array($photoCatalogue) && !empty($photoCatalogue)) {
-              // Si des données de photos sont disponibles, itère à travers chaque élément du tableau.
-        foreach ($photoCatalogue as $photo) {
-            $image_url = $photo['img'][0]; // Récupère l'URL de l'image.
-            $link_url = $photo['url']; // Récupère l'URL du lien vers le post.
-            
-            // Affiche le code HTML pour chaque photo avec son URL et son lien.
-            echo '<div class="photo-item">';
-            echo '<div class="overlay-catalogue">';
-            echo '<a href="' . esc_url($link_url) . '">';
-            echo '<i class="fa-regular fa-eye"></i>'; // Ajoute une icône pour visualiser la photo.
-            echo '</a>';
-            echo '<i class="fa-solid fa-expand"></i>'; // Ajoute une icône pour agrandir la photo
-            echo '</div>';
-            echo '<img class="image-catalogue" src="' . esc_url($image_url) . '" alt="Photo" />'; // Affiche l'image.
-            echo '</div>';
+      if ($photoCatalogue){
+      foreach ($photoCatalogue as $photo) {
+        echo $photo;
         }
-                // Si aucun élément n'est trouvé dans $photoCatalogue, affiche un message indiquant qu'aucune photo n'a été trouvée.
     } else {
         echo 'Aucune photo trouvée.';
     }

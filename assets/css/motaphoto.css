@@ -1,8 +1,4 @@
 @charset "UTF-8";
-:root {
-  --background-image: url("./images/nathalie-0.webp");
-}
-
 @font-face {
   font-family: "Space Mono";
   src: local("Space Mono"), local("Space_Mono"), url(../fonts/Space_Mono/SpaceMono-Regular.ttf) format("truetype");
@@ -520,7 +516,7 @@
 .hero__title {
   width: 65%;
   position: absolute;
-  left: 50%; /* Centre le titre horizontalement */
+  left: 56%; /* Centre le titre horizontalement */
   bottom: 50%;
   transform: translate(-50%, 50%); /* Centre le titre horizontalement */
   z-index: 1;
@@ -617,6 +613,27 @@
   background-color: black;
   transform: scale(0.95);
   color: #E5E5E5;
+}
+
+.taxonomy-categorie_item {
+  font-family: "Poppins";
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: black;
+  line-height: 21px;
+  border-radius: 8px;
+  padding: 11px 130px 11px 11px;
+}
+
+.taxonomy-categorie_hide {
+  background-color: white;
+}
+.taxonomy-categorie_hide:hover {
+  color: white;
+}
+
+.taxonomy-categorie_items:hover {
+  background-color: #E00000;
 }
 
 body {

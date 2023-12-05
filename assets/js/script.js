@@ -1,9 +1,8 @@
 (function($){
 //modale de contact
-    //clic sur le menu contact 
+    // Clic sur le bouton contact dans le menu 
     $("#menu-item-26").on('click',function(event){
          event.preventDefault();
-         //remplissage automatique de la ref
         $("#formRef").val($("#reference").text().toUpperCase());
         $(".popup-overlay").css('display','flex');
     });
@@ -46,16 +45,16 @@ $(".arrow-prev").hover(
 $("#charger-plus").on('click', function(event){
     event.preventDefault();
     $.ajax({
-        type:'POST', 
+        type:'POST',
         url: motaphoto_js.ajax_url,
-        data:{
+        data:{ 
             action:'loadingAllPhotos', 
         }, 
-        success:function(response){
-            console.log(response);
-            if (response.length>0){
-                response.forEach(function(photo){
-                    $(".photo-catalogue").append(photo);
+        success:function(response){ 
+            console.log(response); 
+            if (response.length>0){ 
+                response.forEach(function(photo){ 
+                    $(".photo-catalogue").append(photo); 
                 })
             }
             $("#charger-plus").hide();
@@ -65,23 +64,46 @@ $("#charger-plus").on('click', function(event){
 }
 );
 
+// Filtres en AJAX 
+
+$(".taxonomy-categorie_item").on('change', function(event){
+    event.preventDefault();
+    ajaxRequest();
+});
+
+$(".FORMAT").on('change', function(event){
+    event.preventDefault();
+    ajaxRequest();
+});
+
+$(".ORDER").on('change', function(event){
+    event.preventDefault();
+    ajaxRequest();
+});
+
+function ajaxRequest(){
+    // Récupérer la valeur sélectionnée dans le menu déroulant des catégories
+    let selectedCategorie = $('.taxonomy-categorie_item').val();
+    let selectedFormat = $('.FORMAT').val();
+    let selectedOrder = $('.ORDER').val();
+
+    $.ajax({
+        type:'POST', 
+        url: motaphoto_js.ajax_url,
+        data:{
+            action:'request_photoCatalogue', 
+            categorie: selectedCategorie, // Envoyer le format sélectionné au serveur
+            format : selectedFormat, // Envoyer le format sélectionné au serveur
+            order : selectedOrder, // Envoyer le format sélectionné au serveur
+        }, 
+        success:function(response){
+            console.log(response);
+            $('.photo-catalogue').html(response);
+
+            $("#charger-plus").hide();
+        },
+
+    });
+}
+
 })(jQuery);
-
-/**bonne idées mais le changement doit se faire dans une requête (affichage random) car cela permet que si la personne ajoute une photo, elle n'est pas à modifier le code 
-//Changement de la photo aléatoire dans le Hero 
-function getRandomImage() {
-    const numberOfImages = 16;
-    const randomNumber = Math.floor(Math.random() * numberOfImages) ; 
-    const imagePath = `../../assets/images/nathalie-${randomNumber}.webp`; // Génère le chemin de l'image en utilisant le numéro aléatoire
-    return imagePath;
-}
-
-// Fonction pour changer dynamiquement l'image de fond
-function changeBackgroundImage() {
-    const randomImage = getRandomImage();
-    document.documentElement.style.setProperty('--background-image', `url('${randomImage}')`);
-}
-
-// Utilisation de la fonction
-changeBackgroundImage();
-*/
