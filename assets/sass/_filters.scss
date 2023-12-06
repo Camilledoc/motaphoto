@@ -1,20 +1,22 @@
-.taxonomy-categorie_item {
+.taxonomy-categorie_item, .taxonomy-format_item, .taxonomy-order_item {
     font-family: 'Poppins';
     font-size: 0.8rem;
     font-weight: 500;
     color: black;
     line-height: 21px;
     border-radius: 8px;
-    padding: 11px 130px 11px 11px;
+    padding: 11px;
+    width: 250px;
+    margin: 11px;
 }
 
-.taxonomy-categorie_hide {
-    background-color: white; 
-    &:hover {
-        color: white;
-    }
+.filtres {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.taxonomy-categorie_items:hover {
-    background-color: $red;
+.filtres-taxo {
+    display: flex;
 }

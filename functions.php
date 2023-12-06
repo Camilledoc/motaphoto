@@ -141,16 +141,19 @@ function motaphoto_request_photoHero()
 function motaphoto_request_photoCatalogue() 
 {
     // Récupérer la catégorie et le format sélectionnés depuis la requête POST
-    $selectedCategorie = isset($_POST['categorie']) ? sanitize_text_field($_POST['categorie']) : null;
+    $selectedCategorie = isset($_POST['categorie']) ? sanitize_text_field($_POST['categorie']) : null; //ici null=abs de valeur et pas 0
     $selectedFormat = isset($_POST['format']) ? sanitize_text_field($_POST['format']) : null;
     $selectedOrder = isset($_POST['order']) ? sanitize_text_field($_POST['order']) : 'DESC';
     $taxoQuery=[]; 
 
+    //requête de base où l'on va ajouter des filtres avec les if, on restreint notre requête
+    // si j'ai qqch dans la carégorie ou le format,  j'ajoute un des 2 tableaux 
     $args = array (
         'post_type' => 'photo', 
         'posts_per_page' => 12, 
         'orderby' => 'date',
-        'order' => $selectedOrder,);
+        'order' => $selectedOrder,
+    );
     if ($selectedCategorie){
         $taxoQuery[] = array(
             'taxonomy' => 'categorie',
@@ -167,6 +170,7 @@ function motaphoto_request_photoCatalogue()
         }
     if(!empty($taxoQuery)){
         $args['tax_query']=$taxoQuery;
+        //si notre tableau n'est pas vide, on ajouter les args du wp query, le ou les tableaux 
     } 
 
     $query = new WP_Query($args); 

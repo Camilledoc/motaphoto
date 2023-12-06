@@ -71,12 +71,12 @@ $(".taxonomy-categorie_item").on('change', function(event){
     ajaxRequest();
 });
 
-$(".FORMAT").on('change', function(event){
+$(".taxonomy-format_item").on('change', function(event){
     event.preventDefault();
     ajaxRequest();
 });
 
-$(".ORDER").on('change', function(event){
+$(".taxonomy-order_item").on('change', function(event){
     event.preventDefault();
     ajaxRequest();
 });
@@ -84,17 +84,17 @@ $(".ORDER").on('change', function(event){
 function ajaxRequest(){
     // Récupérer la valeur sélectionnée dans le menu déroulant des catégories
     let selectedCategorie = $('.taxonomy-categorie_item').val();
-    let selectedFormat = $('.FORMAT').val();
-    let selectedOrder = $('.ORDER').val();
+    let selectedFormat = $('.taxonomy-format_item').val();
+    let selectedOrder = $('.taxonomy-order_item').val();
 
     $.ajax({
         type:'POST', 
         url: motaphoto_js.ajax_url,
         data:{
             action:'request_photoCatalogue', 
-            categorie: selectedCategorie, // Envoyer le format sélectionné au serveur
+            categorie: selectedCategorie, // Envoyer la catégorie sélectionné au serveur
             format : selectedFormat, // Envoyer le format sélectionné au serveur
-            order : selectedOrder, // Envoyer le format sélectionné au serveur
+            order : selectedOrder, // Envoyer l'ordre sélectionné au serveur
         }, 
         success:function(response){
             console.log(response);
