@@ -624,7 +624,10 @@
   border-radius: 8px;
   padding: 11px;
   width: 250px;
-  margin: 11px;
+}
+
+.taxonomy-categorie_item {
+  margin-right: 40px;
 }
 
 .filtres {
@@ -632,10 +635,64 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  margin: 0 50px;
 }
 
 .filtres-taxo {
   display: flex;
+}
+
+.lightbox-overlay {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(-50%, -20%);
+  z-index: 1;
+  background-color: rgba(49, 49, 68, 0.8);
+  display: none;
+}
+
+.lightbox-close {
+  position: absolute;
+  color: white;
+  font-size: 2rem;
+  right: 5%;
+}
+
+.lightbox-popup {
+  width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.lightbox-arrow-precedent, .lightbox-arrow-suivant {
+  display: flex;
+  flex-direction: row;
+}
+.lightbox-arrow-precedent p, .lightbox-arrow-suivant p {
+  color: white;
+  font-family: "Space Mono";
+  padding: 0 12px;
+}
+
+.arrow-precedent, .arrow-suivant {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.lightbox-details p {
+  color: white;
+  font-family: "Space Mono";
 }
 
 body {

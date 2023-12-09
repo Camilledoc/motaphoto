@@ -7,7 +7,10 @@
     border-radius: 8px;
     padding: 11px;
     width: 250px;
-    margin: 11px;
+}
+
+.taxonomy-categorie_item {
+    margin-right: 40px;
 }
 
 .filtres {
@@ -15,6 +18,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    margin: 0 50px;
 }
 
 .filtres-taxo {

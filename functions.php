@@ -183,13 +183,15 @@ function motaphoto_request_photoCatalogue()
             $thumbnail_id = get_post_thumbnail_id(); 
             $image = wp_get_attachment_image_src($thumbnail_id, 'large'); 
             $url = get_permalink(); 
-             
+             //utiliser sur la page d'accueil
             $photo_html = '<div class="photo-item">';
             $photo_html .= '<a href="' . esc_url($url) . '">';
             $photo_html .= '<div class="overlay-catalogue">';
             $photo_html .= '<i class="fa-regular fa-eye"></i>';
             $photo_html .= '</a>';
+            $photo_html .= '<a href="">';
             $photo_html .= '<i class="fa-solid fa-expand"></i>';
+            $photo_html .= '</a>';
             $photo_html .= '</div>';
             $photo_html .= '<img class="image-catalogue" src="' . esc_url($image[0]) . '" alt="Photo" />';
             $photo_html .= '</div>';

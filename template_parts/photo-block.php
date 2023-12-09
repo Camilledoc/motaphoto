@@ -9,13 +9,15 @@
                 foreach ($photoBlock as $photo) {
                     $image_url = $photo['img'][0];
                     $link_url = $photo['url'];
-
+// utiliser sur la page single photo
                     echo '<div class="photo-item">';
                     echo '<div class="overlay">';
                     echo '<a href="' . esc_url($link_url) . '">';
                     echo '<i class="fa-regular fa-eye"></i>'; 
                     echo '</a>';
+                    echo '<a href="">';
                     echo '<i class="fa-solid fa-expand"></i>';
+                    echo '</a>';
                     echo '</div>';
                     echo '<img class="image-block" src="' . esc_url($image_url) . '" alt="Photo" />';
                     echo '</div>';

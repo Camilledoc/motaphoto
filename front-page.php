@@ -75,8 +75,7 @@
 
         echo '<select class="taxonomy-order_item" name="order" id="order">';
         echo '<option value="">TRIER PAR</option>';
-
-        if ($selectedOrder === 'DESC') {
+        if ($selectedOrder && !is_wp_error($selectedOrder)) {
             echo '<option class="taxonomy-order_items" value="DESC" selected>Du plus récent au plus ancien</option>';
             echo '<option class="taxonomy-order_items" value="ASC">Du plus ancien au plus récent</option>';
         } else {
