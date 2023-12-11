@@ -1,11 +1,15 @@
 .lightbox-overlay {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh; 
-    transform: translate(-50%, -20%);
     z-index: 1;
     background-color: rgba(49, 49, 68, 0.8);
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .lightbox-close {
@@ -13,11 +17,19 @@
     color: white;
     font-size: 2rem;
     right:5%;
+    top:2%;
 }
 
 .lightbox-popup {
     width: 80vw;
     margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.lightbox-nav {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -27,6 +39,9 @@
 .lightbox-arrow-precedent, .lightbox-arrow-suivant {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
     p {
         color: white;
         font-family: 'Space Mono';
@@ -34,19 +49,13 @@
     }
 }
 
-.arrow-precedent, .arrow-suivant {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .lightbox-details {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    p {
-        color: white;
-        font-family: 'Space Mono';
-    }
+    color: white;
+    font-family: 'Space Mono';
 }
