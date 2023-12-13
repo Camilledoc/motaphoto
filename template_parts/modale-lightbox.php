@@ -11,15 +11,15 @@
                             </div>    
                 </div>
                 <div class="lightbox-photo">
-                    <p>mon image</p>
                 </div> 
                 <div class="lightbox-arrow-suivant">
+                            <div>   
+                                <p>Suivante</p>
+                            </div>  
                             <div class="arrow-suivant">
                                 <img src="<?php echo get_template_directory_uri() . '\assets\images\NextWhite.png'; ?> " alt="flèche suivante">
                             </div>
-                            <div>   
-                                <p>Suivante</p>
-                            </div>   
+                             
                 </div>
                 </div>
             <div class="lightbox-details">

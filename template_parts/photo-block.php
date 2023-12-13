@@ -1,5 +1,5 @@
-<div class="photo-catalogue">
-    <div class="photo-block-photo">
+<div class="photo-catalogue photo-catalogue-single">
+    <div class="photo-block-photo photo-block-photo-single">
         <?php
         $post_id = get_the_ID(); // Récupère l'ID du post actuel
         

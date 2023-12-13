@@ -29,6 +29,16 @@
     align-items: center;
 }
 
+.lightbox-photo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+img{
+   width: 83%;
+}
+
 .lightbox-nav {
     display: flex;
     flex-direction: row;
@@ -46,16 +56,31 @@
         color: white;
         font-family: 'Space Mono';
         padding: 0 12px;
+        &:hover{
+            font-weight: 700;
+        }
     }
 }
 
-
+.arrow-precedent, .arrow-suivant {
+transition: all ease-in-out 300ms;
+    &:hover {
+    transform: scaleX(1.2) scaleY(1);
+    }
+}
 
 .lightbox-details {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    width: 60%;
     color: white;
     font-family: 'Space Mono';
+    text-transform: uppercase;
+    margin-top: 11px;
+}
+
+.lightbox-details_ref {
+    margin-left: 30px;
 }

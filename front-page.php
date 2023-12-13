@@ -20,7 +20,7 @@
   </div>
 
   <div class="hero__title">
-    <h1> Photographe events</h1>
+    <h1> Photographe <span>events<span></h1>
       <svg version="1.1" xmlns="//www.w3.org/2000/svg" xmlns:xlink="//www.w3.org/1999/xlink" style="display:none;">
         <defs>
           <filter id="stroke-text-svg-filter">

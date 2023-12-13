@@ -5,6 +5,9 @@
     align-items: center;
     border-top: 1px solid black ;
     height: 60px;
+    @media (max-width: $mobile-breakpoint) {
+        height: 80px;
+    }
     nav, p {
         display: flex;
         flex-direction: row;
@@ -14,17 +17,29 @@
         color: black;
         text-transform: uppercase;
         @media (max-width: $mobile-breakpoint) {
-            font-size: 10px;
+            font-size: 12px;
             line-height: 0;
+            flex-direction: column;
         }
            ul {
             display: flex; 
             flex-direction: row;
             list-style-type: none;
             padding: 0;
+            @media (max-width: $mobile-breakpoint) {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-top: 15px;
+                margin-bottom: -12px; 
+            }
             li, p {
                 margin-right: 10px;
                 margin-left: 10px;
+                @media (max-width: $mobile-breakpoint) {
+                    height: 20px;
+                    margin: 0;
+                }
                 a {
                     text-decoration: none;
                     color: black;

@@ -20,6 +20,18 @@
 ]); 
 ?>
 </nav>
+
+
+<a href="#menu-toggle" id="toggle"><span></span></a>
+
+<div id="menu-toggle">
+<?php /*affiche mon menu toggle */
+ wp_nav_menu([
+    'theme_location' => 'main-menu',
+]); 
+?>
+</div>
+
 </div>
 </header>
 
