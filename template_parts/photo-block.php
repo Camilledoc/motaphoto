@@ -10,8 +10,8 @@
                     $image_url = $photo['img'][0];
                     $link_url = $photo['url'];
                     $category = wp_get_post_terms(get_the_ID(), 'categorie', ['fields'=>'names']);
-
-// utilisé sur la page single photo
+                    
+                    // utilisé sur la page single photo
                     echo '<div class="photo-item" data-ref="'. get_field('reference') .'" data-cat="'. $category[0] .'">';
                     echo '<div class="overlay">';
                     echo '<a href="' . esc_url($link_url) . '">';

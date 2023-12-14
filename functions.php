@@ -1,13 +1,11 @@
 <?php
-/**
-** activation theme
-**/
+/** activation theme **/
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() 
 {
-    wp_enqueue_style( 'theme-style', get_stylesheet_directory_uri() . '/assets/css/motaphoto.css', array(), time() );
-    wp_enqueue_script( 'script-js', get_stylesheet_directory_uri() . '/assets/js/script.js', array('jquery'), time(), true );
-    wp_enqueue_script( 'modale-js', get_stylesheet_directory_uri() . '/assets/js/lightbox.js', array('jquery'), time(), true );
+    wp_enqueue_style( 'theme-style', get_stylesheet_directory_uri() . '/assets/css/motaphoto.css', array(), '1.0');
+    wp_enqueue_script( 'script-js', get_stylesheet_directory_uri() . '/assets/js/script.js', array('jquery'), '1.0', true );
+    wp_enqueue_script( 'modale-js', get_stylesheet_directory_uri() . '/assets/js/lightbox.js', array('jquery'), '1.0', true );
     wp_localize_script('script-js', 'motaphoto_js', array('ajax_url' => admin_url('admin-ajax.php'))); 
 }
 
@@ -58,12 +56,10 @@ function motaphoto_request_photoMiniature($order)
 /**requête WP_Query pour les photos apparentées */
 function motaphoto_request_photoBlock($current_post_id)
 {
-        // Récupère les termes de la taxonomie 'categorie' associés au post actuel.
-    $current_post_categories = wp_get_post_terms($current_post_id, 'categorie');
+    $current_post_categories = wp_get_post_terms($current_post_id, 'categorie'); //Récupère les termes de la taxonomie 'categorie' associés au post actuel.
     $category_slugs = array(); 
     
-    // Récupère les slugs des catégories associées au post actuel
-    foreach ($current_post_categories as $category) {
+    foreach ($current_post_categories as $category) { // Récupère les slugs des catégories associées au post actuel
         $category_slugs[] = $category->slug;
     }    
 
@@ -147,8 +143,6 @@ function motaphoto_request_photoCatalogue()
     $selectedOrder = isset($_POST['order']) ? sanitize_text_field($_POST['order']) : 'DESC';
     $taxoQuery=[]; 
 
-    //requête de base où l'on va ajouter des filtres avec les if, on restreint notre requête
-    // si j'ai qqch dans la carégorie ou le format,  j'ajoute un des 2 tableaux 
     $args = array (
         'post_type' => 'photo', 
         'posts_per_page' => 12, 
@@ -171,7 +165,6 @@ function motaphoto_request_photoCatalogue()
         }
     if(!empty($taxoQuery)){
         $args['tax_query']=$taxoQuery;
-        //si notre tableau n'est pas vide, on ajouter les args du wp query, le ou les tableaux 
     } 
 
     $query = new WP_Query($args); 
@@ -204,8 +197,7 @@ function motaphoto_request_photoCatalogue()
     
     wp_reset_postdata();
     if($_SERVER['REQUEST_METHOD']=='GET'){
-        // var_dump($query);
-         return $photosCatalogue;
+        return $photosCatalogue;
      }
 
    wp_send_json($photosCatalogue);
@@ -240,7 +232,6 @@ function motaphoto_loadingAllPhotos(){
             $photo_html .= '<img class="image-catalogue" src="' . esc_url($image[0]) . '" alt="Photo" />';
             $photo_html .= '</div>';
 
-            // Ajoute le code HTML de la photo au tableau $photos.
             $photos[]=$photo_html; 
         }
     }
@@ -253,6 +244,5 @@ function motaphoto_loadingAllPhotos(){
 /**actions requêtes */
 add_action('wp_ajax_loadingAllPhotos', 'motaphoto_loadingAllPhotos'); 
 add_action('wp_ajax_nopriv_loadingAllPhotos', 'motaphoto_loadingAllPhotos'); 
-
 add_action('wp_ajax_request_photoCatalogue', 'motaphoto_request_photoCatalogue'); 
 add_action('wp_ajax_nopriv_request_photoCatalogue', 'motaphoto_request_photoCatalogue'); 

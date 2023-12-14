@@ -5,19 +5,21 @@
     display: none;
     justify-content: center;
     align-items: center;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     margin-top: 60px;
     z-index: 1;
     background-color: rgba(49, 49, 68, 0.5);
+
     @media (max-width: $mobile-breakpoint) {
         height: 95%;
-         }
+    }
 }
 
 .popup-close {
     position: relative;
 }
+
 .popup-contact {
     width: 36%;
     background: white;
@@ -26,52 +28,58 @@
     bottom: 3%;
     z-index: 2;
     overflow: hidden;
+
     @media (max-width: $mobile-breakpoint) {
         width: 65%;
     }
-   }
+}
 
-.popup-header img{
+.popup-header img {
     width: 150%;
     position: relative;
-    top: 50%; left: 50%; /* à 50%/50% du parent référent */
-    transform: translate(-50%, 3%); /* décalage de 50% de sa propre taille */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 3%);
     margin-bottom: 1.5rem;
 }
 
 .popup-formulaire {
     form {
         width: 80%;
-        margin: 0 auto; 
+        margin: 0 auto;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
     }
+
     p {
-    color: $blueNavy;
-    font-weight: 500;
-    margin: 1rem;
-    @media (max-width: $mobile-breakpoint) {
-        font-size: 0.8rem;
-        margin: 0.5rem;
-    }
+        color: $blueNavy;
+        font-weight: 500;
+        margin: 1rem;
+
+        @media (max-width: $mobile-breakpoint) {
+            font-size: 0.8rem;
+            margin: 0.5rem;
         }
+    }
 }
 
 .fenetre input {
-    border: solid 1px #B8BBC2; 
+    border: solid 1px #B8BBC2;
     border-radius: 8px;
     height: 40px;
+
     @media (max-width: $mobile-breakpoint) {
-       width: 200px;
+        width: 200px;
     }
 }
 
 .fenetre textarea {
-    border: solid 1px #B8BBC2; 
+    border: solid 1px #B8BBC2;
     border-radius: 8px;
     height: 210px;
+
     @media (max-width: $mobile-breakpoint) {
         height: 50px;
         width: 200px;
@@ -79,12 +87,12 @@
 }
 
 .btn {
-    background-color: $grayMedium; 
+    background-color: $grayMedium;
     border-radius: 2px;
     width: 263px;
     height: 50px;
-    padding: 8px, 15px;  
-    margin : 0 auto;   
+    padding: 8px, 15px;
+    margin: 0 auto;
     border: none;
     font-family: 'Space Mono';
     font-size: 0.8rem;
@@ -93,12 +101,14 @@
     flex-direction: row;
     justify-content: center;
     transition: all ease-in-out 300ms;
+
     &:hover {
         font-weight: 700;
         background-color: black;
         transform: scale(0.95);
         color: $grayMLight;
     }
+
     @media (max-width: $mobile-breakpoint) {
         width: 200px;
     }

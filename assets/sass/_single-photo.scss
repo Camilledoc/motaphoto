@@ -5,7 +5,7 @@
     align-items: center;
     width: 100vw;
     background: linear-gradient(to bottom, #F7F9F9 1%, #FFFFFF 99%);
-        }
+}
 
 .single-photo-container {
     display: flex;
@@ -14,33 +14,44 @@
     align-items: end;
     width: 80%;
     margin-top: 2%;
+
     @media (max-width: $mobile-breakpoint) {
         flex-direction: column;
         align-items: baseline;
     }
-    }
+}
 
 .single-photo__info {
-    border-bottom: solid 1px black ;
+    border-bottom: solid 1px black;
     width: 50vw;
     display: flex;
     flex-direction: column;
     justify-content: left;
     margin-right: 1%;
     padding-right: 12%;
+    padding-bottom: 2%;
+
     p, h2 {
-    text-transform: uppercase;
-    line-height: 8px; 
+        text-transform: uppercase;
+        line-height: 8px;
     }
+
     h2 {
-        max-width: 75%;
-        line-height: 56px;
-        margin: 10px 0 10px 0; 
+        max-width: 99%;
+        line-height: 75px;
+        margin: 10px 0 10px 0;
+
+        @media (max-width: $mobile-breakpoint) {
+            line-height: 56px;
+            max-width: 75%;
+        }
     }
+
     a {
         text-decoration: none;
         color: black;
     }
+
     @media (max-width: $mobile-breakpoint) {
         width: auto;
         margin: 0 0 20px 0;
@@ -49,6 +60,14 @@
     }
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 .single-photo__image {
     width: 50vw;
     height: 80vh;
@@ -56,12 +75,16 @@
     flex-direction: column;
     justify-content: end;
     align-items: end;
+    opacity: 0;
+    animation: fadeIn 600ms forwards;
+
     img {
-    max-height: 100%;
-    object-fit: contain;
+        max-height: 100%;
+        object-fit: contain;
     }
+
     @media (max-width: $mobile-breakpoint) {
-        display:none;
+        display: none;
     }
 }
 
@@ -71,14 +94,16 @@
     justify-content: center;
     align-items: center;
     margin-top: 2%;
+
     img {
         width: 105%;
         height: auto;
         object-fit: contain;
-        }
+    }
+
     @media (min-width: $mobile-breakpoint) {
-        display:none;
-        }
+        display: none;
+    }
 }
 
 .single-photo-interaction {
@@ -88,104 +113,117 @@
     align-items: center;
     width: 80%;
     height: 188px;
-    border-bottom: solid 1px black ;
+    border-bottom: solid 1px black;
+
     @media (max-width: $mobile-breakpoint) {
         width: 100%;
         height: 150px;
-        border-top: solid 1px black ;
+        border-top: solid 1px black;
     }
 
     .interesse {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 50%;
-    margin-right: 2%;
-    button {
-    margin-left: 7%;
-    background-color: $grayMedium; 
-    border-radius: 2px;
-    width: 263px;
-    height: 50px;
-    border: none;
-    font-family: 'Space Mono';
-    font-size: 0.8rem;
-    box-shadow: 0px 2px 1px #B8BBC2;
-    transition: all ease-in-out 300ms;
-    @media (max-width: $mobile-breakpoint) {
-        margin: 10px 0 10px 0;
-    }
-    &:hover {
-        font-weight: 700;
-        background-color: black;
-        transform: scale(0.95);
-        color: $grayMLight;
-    }
-    }
-    @media (max-width: $mobile-breakpoint) {
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        width:90%; 
-    }
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 50%;
+        margin-right: 2%;
+
+        button {
+            margin-left: 7%;
+            background-color: $grayMedium;
+            border-radius: 2px;
+            width: 263px;
+            height: 50px;
+            border: none;
+            font-family: 'Space Mono';
+            font-size: 0.8rem;
+            box-shadow: 0px 2px 1px #B8BBC2;
+            transition: all ease-in-out 300ms;
+
+            @media (max-width: $mobile-breakpoint) {
+                margin: 10px 0 10px 0;
+            }
+
+            &:hover {
+                font-weight: 700;
+                background-color: black;
+                transform: scale(0.95);
+                color: $grayMLight;
+            }
+        }
+
+        @media (max-width: $mobile-breakpoint) {
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            width: 90%;
+        }
     }
 
-    .navigation{
+    .navigation {
         width: 50%;
         display: flex;
         flex-direction: row;
         justify-content: right;
         height: 170px;
-        align-items: end; 
+        align-items: end;
+
         @media (max-width: $mobile-breakpoint) {
-            display:none;
-        }       
+            display: none;
+        }
+
         .miniature {
             display: flex;
             flex-direction: column;
         }
+
         .miniature-prev, .miniature-next {
             display: none;
         }
-        
+
         .miniature-fleche {
-            display: flex; 
+            display: flex;
             flex-direction: row;
             justify-content: space-between;
             width: 150px;
             margin-top: 3px;
             position: relative;
             z-index: 0;
-        }     
+        }
 
         .arrow-prev {
             transition: all ease-in-out 300ms;
-                &:hover {
+
+            &:hover {
                 transform: scaleX(1.2) scaleY(1);
-                }
-        }
-        .arrow-next {
-            transition: all ease-in-out 300ms;
-                &:hover {
-                transform: scaleX(1.2) scaleY(1);
-                }
+            }
         }
 
-        }      
+        .arrow-next {
+            transition: all ease-in-out 300ms;
+
+            &:hover {
+                transform: scaleX(1.2) scaleY(1);
+            }
+        }
+    }
 }
+
 .aussi {
     display: flex;
     flex-direction: column;
     justify-content: left;
     width: 80vw;
     margin-top: 1%;
-    h3{
-    text-align: left;
-    text-transform: uppercase;
-    margin: 3% 0%;
-    @media (max-width: $mobile-breakpoint) {
-        text-align: center;
-    }
+
+    h3 {
+        text-align: left;
+        text-transform: uppercase;
+        margin: 3% 0%;
+
+        @media (max-width: $mobile-breakpoint) {
+            text-align: center;
+        }
     }
 }
 
