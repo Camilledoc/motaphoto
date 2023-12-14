@@ -7,6 +7,15 @@
         $(".popup-overlay").css('display','flex');
     });
 
+    // Clic sur le bouton contact dans le menu responsive 
+    $(".menu-item-26").on('click',function(event){
+        event.preventDefault();
+       $("#formRef").val($("#reference").text().toUpperCase());
+       $(".popup-overlay").css('display','flex');
+       $("#menu-toggle").hide();
+   });
+
+
     //clic sur le bouton contact dans la page single
     $("#single-contact").on('click',function(event){
         event.preventDefault();

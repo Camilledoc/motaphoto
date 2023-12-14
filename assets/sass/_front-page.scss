@@ -40,13 +40,13 @@
         }
     span {
         animation: reveal ease-in 3s, slidein 5s; 
-        //margin-left:-355px;
         }
     @media (max-width: $mobile-breakpoint) {
         -webkit-text-stroke: 0.5px white;
         letter-spacing: 1px;
-        width: 100%;
+        width: 88%;
         bottom: 58%;
+        left: 50%; 
     }
 }
 

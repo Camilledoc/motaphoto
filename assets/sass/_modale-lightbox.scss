@@ -37,6 +37,9 @@
 }
 img{
    width: 83%;
+   @media (max-width: $mobile-breakpoint) {
+    width: 100%;;
+    }
 }
 
 .lightbox-nav {
@@ -44,6 +47,9 @@ img{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    @media (max-width: $mobile-breakpoint) {
+        flex-direction: column;
+    }
 }
 
 .lightbox-arrow-precedent, .lightbox-arrow-suivant {
@@ -79,8 +85,14 @@ transition: all ease-in-out 300ms;
     font-family: 'Space Mono';
     text-transform: uppercase;
     margin-top: 11px;
+    @media (max-width: $mobile-breakpoint) {
+        width: 140%;
+        }
 }
 
 .lightbox-details_ref {
     margin-left: 30px;
+    @media (max-width: $mobile-breakpoint) {
+        margin: 0;
+        }
 }
