@@ -9,7 +9,7 @@ function theme_enqueue_styles()
     wp_localize_script('script-js', 'motaphoto_js', array('ajax_url' => admin_url('admin-ajax.php'))); 
 }
 
-/** menu principal */
+/** menu principal et menu footer*/
 function register_my_menu() 
 {
     register_nav_menu('main-menu', 'Menu principal');

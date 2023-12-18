@@ -50,20 +50,25 @@
     bottom: 50%;
     transform: translate(-50%, 50%); 
     z-index: 1;
+    @media (max-width: $mobile-breakpoint) {
+        width: 88%;
+        bottom: 58%;
+        left: 50%;
+    }
+    h1 {
     letter-spacing: 2px;
     text-transform: uppercase;
+    color:rgba(255,255,255,0);
     -webkit-text-stroke: 3px white;
-    filter: url(#stroke-text-svg-filter);
     opacity: 0;
     animation: flashEffect ease-in-out 1.5s forwards;
 
     @media (max-width: $mobile-breakpoint) {
         -webkit-text-stroke: 0.5px white;
         letter-spacing: 1px;
-        width: 88%;
-        bottom: 58%;
-        left: 50%;
+        text-align: center;
     }
+}  
 }
 
 .hero__image {

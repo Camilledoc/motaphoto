@@ -42,6 +42,8 @@
         $("#formRef").val($("#reference").text().toUpperCase());
         $(".popup-overlay").css('display','flex');
         $("#menu-toggle").hide();
+        toggleClass($("#toggle"), 'on'); 
+
     });
 
     //clic sur le bouton contact dans la page single
@@ -55,6 +57,7 @@
     $(window).on('click', function(event){
         if(event.target == $(".popup-overlay")[0]) {
             $(".popup-overlay").css('display','none'); 
+            $("#menu-toggle").show();
         }
     });
 

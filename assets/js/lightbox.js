@@ -6,7 +6,6 @@
     $('.photo-item').each(function(index) {
         let $this = $(this);
         let imageData = {};
-        console.log($this);
 
         // Récupération des données de l'image
         imageData.id = index + 1; // identifiant unique pour chaque image

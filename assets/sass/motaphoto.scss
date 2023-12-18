@@ -18,11 +18,11 @@ h1 {
     font-family: 'Space Mono';
     font-style: italic;
     font-size: 6rem;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 142px;
 
     @media (max-width: $mobile-breakpoint) {
-        font-size: 1.75rem;
+        font-size: 1.50rem;
     }
 }
 

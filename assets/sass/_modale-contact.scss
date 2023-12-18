@@ -10,11 +10,23 @@
     margin-top: 60px;
     z-index: 1;
     background-color: rgba(49, 49, 68, 0.5);
+    opacity: 0; 
+    animation: fadeInAnimation 600ms ease-in forwards; 
 
     @media (max-width: $mobile-breakpoint) {
         height: 95%;
     }
 }
+
+//animation pop-up contact
+@keyframes fadeInAnimation {
+    from {
+      opacity: 0; 
+    }
+    to {
+      opacity: 1; 
+    }
+  }
 
 .popup-close {
     position: relative;
