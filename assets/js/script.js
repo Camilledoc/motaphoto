@@ -37,7 +37,7 @@
     });
 
     // Clic sur le bouton contact dans le menu responsive 
-    $(".menu-item-26").on('click',function(event){
+    $(".menu-item-26", "#menu-toggle").on('click',function(event){
         event.preventDefault();
         $("#formRef").val($("#reference").text().toUpperCase());
         $(".popup-overlay").css('display','flex');
